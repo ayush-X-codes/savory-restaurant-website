@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --sec-bac-clr: #f7fafc;
+    --col-bac-clr: #ffffff;
+    --col-heading-clr: #ff6b35;
+    --hours-text-clr: #4a5568;
+    --loc-text-clr: #4a5568;
+    --col-heading-size: 24px;
+    --fw-heading: 700;
+    --text-size: 16px;
+}
+
+.info-section {
+    background-color: var(--sec-bac-clr);
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.col {
+    background-color: var(--col-bac-clr);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 350px;
+    text-align: left;
+}
+
+.heading{
+    font-size: var(--col-heading-size);
+    font-weight: var(--fw-heading);
+    color: var(--col-heading-clr);
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.res-info{
+    font-size: var(--text-size);
+    line-height: 1.8;
+    color: var(--loc-text-clr);
+}

@@ -1,0 +1,133 @@
+:root {
+    --bg-clr: #f7fafc;
+    --fs-heading: 48px;
+    --fw-bold-700: 700;
+    --clr-heading: #2d3748;
+    --col-clr: #ffffff;
+    --fs-medium: 24px;
+    --clr-icons: #ff6b35;
+    --fs-small: 14px;
+    --fw-bold-600: 600;
+    --clr-label: #718096;
+    --con-label-clr: #4a5568;
+}
+
+.contact-wrapper {
+    background-color: var(--bg-clr);
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-heading {
+    font-size: var(--fs-heading);
+    font-weight: var(--fw-bold-700);
+    color: var(--clr-heading);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.col-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+
+.col {
+    background-color: var(--col-clr);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sec-heading {
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-bold-700);
+    color: var(--clr-heading);
+    margin-bottom: 30px;
+}
+
+.address-sec {
+    height: fit-content;
+}
+
+.address-box {
+    display: flex;
+    /* align-items: center; */
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+
+
+.icons {
+    color: var(--clr-icons);
+}
+
+.address-label {
+    font-size: 14px;
+    font-weight: var(--fw-bold-600);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.label-value {
+    font-size: 16px;
+    color: var(--clr-heading);
+    line-height: 1.5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: var(--fw-bold-600);
+    color: var(--con-label-clr);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-input:focus {
+    border-color: var(--clr-icons);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.message-box {
+    height: 150px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: var(--clr-icons);
+    color: var(--col-clr);
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: var(--fw-bold-600);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #e55a28;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 53, 0.3);
+}
