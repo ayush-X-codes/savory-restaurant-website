@@ -1,76 +1,180 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --res-name-clr: #ffffff;
-    --clr-tagline: #f0f0f0;
-    --btn-bac-clr: #ff6b35;
-    --btn-clr: #ffffff;
-    --res-name-size: 4.8rem;
-    --tagline-size: 1.8rem;
-    --btn-size: 1.2rem;
+  --res-name-clr: #ffffff;
+  --clr-tagline: #f0f0f0;
+  --btn-bac-clr: #ff6b35;
+  --btn-clr: #ffffff;
 }
 
 .hero-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  height: 100vh;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 20px;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/pasta.png");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/pasta.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
 }
 
-/* .restaurant-image{
- 
-    
-} */
-
-.restaurant-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    display: block;
-
+.restaurant-image {
+  display: none;
 }
 
 #res-name {
-    font-family: "Poppins", sans-serif;
-    font-size: var(--res-name-size);
-    font-weight: 700;
-    color: var(--res-name-clr);
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--res-name-clr);
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
 }
 
 .res-intro {
-    font-family: "Inter", sans-serif;
-    font-size: var(--tagline-size);
-    font-weight: 400;
-    color: var(--clr-tagline);
-    margin-top: 1.4rem;
-    max-width: 600px;
-    padding: 0 5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-tagline);
+  margin-top: 1rem;
+  max-width: 90%;
+  padding: 0 20px;
+  line-height: 1.6;
 }
 
 .menu-btn {
-    background-color: var(--btn-bac-clr);
-    color: var(--btn-clr);
-    padding: 16px 48px;
-    border-radius: 30px;
-    font-size: var(--btn-size);
-    font-weight: 600;
-    margin-top: 2.4rem;
-    box-shadow: 0px 8px 20px rgba(255, 107, 53, 0.3);
-    cursor: pointer;
-    transition: all 0.2s ease;
+  background-color: var(--btn-bac-clr);
+  color: var(--btn-clr);
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  box-shadow: 0px 6px 16px rgba(255, 107, 53, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  min-height: 48px;
+  min-width: 160px;
 }
 
 .menu-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 20px rgba(255, 107, 53, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.menu-btn:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 375px) {
+  #res-name {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .res-intro {
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .menu-btn {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 550px;
+    padding: 0 40px;
+  }
+
+  #res-name {
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
+  }
+
+  .res-intro {
+    font-size: 1.25rem;
+    margin-top: 1.2rem;
+    max-width: 600px;
+    padding: 0 40px;
+  }
+
+  .menu-btn {
+    padding: 15px 42px;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 600px;
+    background-attachment: fixed;
+  }
+
+  #res-name {
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+  }
+
+  .res-intro {
+    font-size: 1.5rem;
+    margin-top: 1.4rem;
+    max-width: 700px;
+  }
+
+  .menu-btn {
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    margin-top: 2.4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  #res-name {
+    font-size: 5rem;
+  }
+
+  .res-intro {
+    font-size: 1.6rem;
+    max-width: 800px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  #res-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .res-intro {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .menu-btn {
+    margin-top: 1rem;
+    padding: 12px 32px;
+  }
 }

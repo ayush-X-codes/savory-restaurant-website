@@ -15,52 +15,225 @@
   align-items: center;
   background-color: var(--nav-bac-clr);
   height: 70px;
-  padding: 0 40px;
+  padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.nav-links {
-  display: flex;
-  font-size: 15px;
-  font-weight: 500;
-  font-family: "Inter", sans-serif;
-  gap: 2rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.nav-links li:hover {
-  color: var(--hover-clr);
-  transform: translateY(-2px);
-}
-
-.nav-links li {
-  color: var(--nav-link);
-}
-
 .resturent-name {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
   color: var(--name-clr);
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 8px;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.hamburger svg {
+  color: var(--nav-link);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active svg {
+  transform: rotate(90deg);
+  color: var(--hover-clr);
+}
+
+.hamburger-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-bars span {
+  width: 28px;
+  height: 3px;
+  background-color: var(--nav-link);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-bars.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+  background-color: var(--hover-clr);
+}
+
+.hamburger-bars.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-bars.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background-color: var(--hover-clr);
+}
+
+.nav-links {
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  gap: 1rem;
+  transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  list-style: none;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.nav-links.active {
+  left: 0;
+}
+
+.nav-links li {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+  padding: 0;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.3s ease;
+}
+
+.nav-links.active li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-links.active li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.nav-links.active li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.nav-links.active li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.nav-links.active li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  color: #e2e8f0;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: var(--hover-clr);
+  transform: translateX(8px);
 }
 
 #order-btn {
   background-color: var(--btn-bac-clr);
   color: var(--btn-clr);
-  padding: 10px 24px;
+  padding: 0 -1px;
   border-radius: 25px;
   border: none;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(255, 107, 53, 0.2);
+  box-shadow: 0px 6px 20px rgba(255, 107, 53, 0.4);
+  margin-top: 20px;
+}
+
+#order-btn a {
+  color: var(--btn-clr) !important;
 }
 
 #order-btn:hover {
-  box-shadow: 0px 6px 16px rgba(255, 107, 53, 0.3);
+  box-shadow: 0px 8px 24px rgba(255, 107, 53, 0.5);
+  transform: translateY(-3px) scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+
+  .resturent-name {
+    font-size: 26px;
+  }
+
+  .hamburger,
+  .hamburger-bars {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: 2rem;
+    overflow: visible;
+  }
+
+  .nav-links li {
+    font-size: 15px;
+    width: auto;
+    padding: 0;
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav-links li a {
+    color: var(--nav-link);
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .nav-links li a:hover {
+    background: none;
+    color: var(--hover-clr);
+    transform: translateY(-2px);
+  }
+
+  #order-btn {
+    padding: 10px 24px;
+    margin-top: 0;
+  }
+
+  #order-btn:hover {
+    transform: translateY(-2px) scale(1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    gap: 2.5rem;
+  }
 }
