@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <nav className={`wrapper${scrolled ? ' scrolled' : ''}`}>
-      <div className='resturent-name'>SAVORY</div>
+      <div className='resturent-name'>The Klay</div>
 
      
       <div

@@ -8,9 +8,9 @@ const Hero = () => {
             <div className='restaurant-image' />
 
             <div className='hero-content'>
-                <p className='hero-label'>Authentic Italian Cuisine</p>
+              <p className='hero-label'>Modern Café & Comfort Food</p>
 
-                <h1 id='res-name'>SAVORY</h1>
+                <h1 id='res-name'>The Klay</h1>
 
                 <div className='hero-divider' />
 

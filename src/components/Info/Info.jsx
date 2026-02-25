@@ -52,11 +52,11 @@ const Info = () => {
         <div className="info-row">
           <p className="res-info">
             <strong>Mon – Fri</strong>
-            11:00 AM – 10:00 PM
+            8:00 AM – 11:30 PM
           </p>
           <p className="res-info">
             <strong>Sat – Sun</strong>
-            10:00 AM – 11:00 PM
+            8:00 AM – 11:30 PM
           </p>
         </div>
       </div>
@@ -70,15 +70,15 @@ const Info = () => {
         <div className="card-divider" />
         <div className="info-row">
           <p className="res-info">
-            123 Main Street, Downtown, City 12345
+           Rampur Rd, Dewalchaur Bandobasti, Haldwani, Uttarakhand 263139
           </p>
           <p className="res-info">
             <strong>Phone</strong>
-            (555) 123-4567
+            089794 93383
           </p>
           <p className="res-info">
             <strong>Email</strong>
-            hello@savory.com
+           internationalklay@gmail.com
           </p>
         </div>
       </div>

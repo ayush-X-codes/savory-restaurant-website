@@ -27,39 +27,43 @@ const About = () => {
     <section className="about-section" ref={sectionRef}>
       <p className="about-label">Our Story</p>
 
-      <h2 className="about-heading">Rooted in Tradition,<br />Made with Love</h2>
+<h2 className="about-heading">
+  A Modern Café Experience,<br />Crafted for Haldwani
+</h2>
 
-      <div className="about-divider" />
+<div className="about-divider" />
 
-      <div className="about-stats">
-        <div className="stat-pill">
-          <span className="stat-number">15+</span>
-          <span className="stat-label">Years Open</span>
-        </div>
-        <div className="stat-pill">
-          <span className="stat-number">100%</span>
-          <span className="stat-label">Local Ingredients</span>
-        </div>
-        <div className="stat-pill">
-          <span className="stat-number">3rd</span>
-          <span className="stat-label">Generation Recipes</span>
-        </div>
-      </div>
+<div className="about-stats">
+  <div className="stat-pill">
+    <span className="stat-number">4.0★</span>
+    <span className="stat-label">Customer Rating</span>
+  </div>
+  <div className="stat-pill">
+    <span className="stat-number">1,000+</span>
+    <span className="stat-label">Happy Reviews</span>
+  </div>
+  <div className="stat-pill">
+    <span className="stat-number">3 Ways</span>
+    <span className="stat-label">Dine • Drive • Deliver</span>
+  </div>
+</div>
 
-      <div className="about-body">
-        <p className="para-about">
-          Since 2010, we've been serving <strong>authentic homemade pasta</strong> crafted
-          from family recipes passed down through generations. Our passion is bringing
-          the warmth and honest flavors of Italy to your table.
-        </p>
-        <p className="para-about">
-          Every dish is made with fresh, locally-sourced ingredients — from our
-          wood-fired pizzas to our handmade ravioli. Each bite carries a story
-          of tradition and an unwavering dedication to quality.
-        </p>
-      </div>
+<div className="about-body">
+  <p className="para-about">
+    Located on Rampur Road in Haldwani, <strong>The Klay</strong> has become a 
+    favorite neighborhood café where comfort meets convenience. Whether you're 
+    dining in with friends, grabbing a quick drive-through bite, or ordering 
+    from home, we make every experience smooth and satisfying.
+  </p>
+  <p className="para-about">
+    With over a thousand customer reviews and a reputation for consistency, 
+    The Klay is known for its welcoming atmosphere and inclusive environment. 
+    It’s a place where conversations flow, cravings are satisfied, and every 
+    visit feels relaxed and easy.
+  </p>
+</div>
 
-      <p className="about-signature">— The Savory Family</p>
+<p className="about-signature">— Team The Klay</p>
     </section>
   );
 };

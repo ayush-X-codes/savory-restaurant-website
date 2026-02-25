@@ -30,10 +30,10 @@ const Footer = () => {
 
   
         <section>
-          <p className="fot-heading">SAVORY</p>
+          <p className="fot-heading">The Klay</p>
           <div className="brand-rule" />
           <p className="footer-tagline" style={{ marginTop: "14px" }}>
-            Authentic Italian Cuisine<br />in the Heart of the City
+            Modern Café & Comfort Food
           </p>
         </section>
 
@@ -50,15 +50,15 @@ const Footer = () => {
           <p className="fot-heading">Contact Info</p>
           <div className="contact-info-box">
             <MapPin size={14} className="contact-icon" />
-            <p className="contact-info">123 Main Street, Downtown, City 12345</p>
+            <p className="contact-info"> Rampur Rd, Dewalchaur Bandobasti, Haldwani, Uttarakhand 263139</p>
           </div>
           <div className="contact-info-box">
             <Phone size={14} className="contact-icon" />
-            <p className="contact-info">(555) 123-4567</p>
+            <p className="contact-info">   089794 93383</p>
           </div>
           <div className="contact-info-box">
             <Mail size={14} className="contact-icon" />
-            <p className="contact-info">hello@savory.com</p>
+            <p className="contact-info"> internationalklay@gmail.com</p>
           </div>
         </section>
 
