@@ -1,81 +1,157 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactUs.css";
 import { MapPin, Smartphone, Mail } from "lucide-react";
+
+const subjects = ["Reservation", "Private Event", "Feedback", "Other"];
+
 const ContactUs = () => {
+  const [activeChip, setActiveChip] = useState(null);
+
   return (
     <div className="contact-wrapper">
-      <h1 className="main-heading">Get in Touch</h1>
-      <div className="col-container">
-        <section className="address-sec col">
-          <h2 className="sec-heading">Contact Information</h2>
-          <div className="address-box">
-            <div className="address">
-              <div>
-                <MapPin className="icons" />
-                <label className="address-label" htmlFor="address">
-                  Address
-                </label>
-              </div>
-              <div>
-                <p className="label-value"> 123 Main Street</p>
-                <p className="label-value"> Downtown, City, 12345</p>
-              </div>
-            </div>
-            <div className="phone">
-              <div>
-                <Smartphone className="icons" />
-                <label className="address-label" htmlFor="phone">
-                  Phone
-                </label>
-              </div>
-              <div>
 
-                <p className="label-value"> (555) 123-4567</p>
-              </div>
+      {/* ── LEFT: Brand + Info ── */}
+      <div className="contact-left">
+        <span className="contact-brand-name">Savory</span>
+
+        <h1 className="contact-headline">
+          Let's<br />
+          <em>talk</em> over<br />
+          a meal.
+        </h1>
+
+        <p className="contact-tagline">
+          Whether you're planning a special evening or simply have a question —
+          we'd love to hear from you.
+        </p>
+
+        {/* Contact info rows */}
+        <div className="contact-info-list">
+          <div className="info-item">
+            <div className="info-icon-wrap">
+              <MapPin />
             </div>
-            <div className="email">
-              <div>
-                <Mail className="icons" />
-                <label className="address-label" htmlFor="email">
-                  Email
-                </label>
-              </div>
-              <div>
-                <p className="label-value">hello@savory.com</p>
-              </div>
+            <div className="info-text">
+              <span className="info-label">Address</span>
+              <span className="info-value">123 Main Street<br />Downtown, City 12345</span>
             </div>
           </div>
-        </section>
-        <section className="contact-sec col">
-          <h2 className="sec-heading">Send Us a Message</h2>
-          <form className="contact-form">
-            <label className="contact-label" htmlFor="name">
-              Name
-            </label>
-            <input className="contact-input" type="text" required />
 
-            <label className="contact-label" htmlFor="email">
-              Email
-            </label>
-            <input className="contact-input" type="email" required />
+          <div className="info-item">
+            <div className="info-icon-wrap">
+              <Smartphone />
+            </div>
+            <div className="info-text">
+              <span className="info-label">Phone</span>
+              <span className="info-value">(555) 123-4567</span>
+            </div>
+          </div>
 
-            <label className="contact-label" htmlFor="phone">
-              Phone
-            </label>
-            <input className="contact-input" type="tel" required />
+          <div className="info-item">
+            <div className="info-icon-wrap">
+              <Mail />
+            </div>
+            <div className="info-text">
+              <span className="info-label">Email</span>
+              <span className="info-value">hello@savory.com</span>
+            </div>
+          </div>
+        </div>
 
-            <label className="contact-label" htmlFor="message">
-              Message
-            </label>
+        {/* Hours */}
+        <div className="hours-block">
+          <span className="hours-label">Opening Hours</span>
+          <div className="hours-row">
+            <span className="hours-day">Monday – Friday</span>
+            <span className="hours-time">11 AM – 10 PM</span>
+          </div>
+          <div className="hours-row">
+            <span className="hours-day">Saturday – Sunday</span>
+            <span className="hours-time">10 AM – 11 PM</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── RIGHT: Form ── */}
+      <div className="contact-right">
+        <p className="form-eyebrow">Send a message</p>
+        <h2 className="form-title">We'd love to<br />hear from you.</h2>
+        <p className="form-subtitle">
+          Fill out the form and our team will get back to you within 24 hours.
+        </p>
+
+        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+
+          {/* Name + Email row */}
+          <div className="field-row">
+            <div className="field-group">
+              <label className="contact-label" htmlFor="name">Name</label>
+              <input
+                className="contact-input"
+                id="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div className="field-group">
+              <label className="contact-label" htmlFor="email">Email</label>
+              <input
+                className="contact-input"
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          {/* Phone */}
+          <div className="field-group">
+            <label className="contact-label" htmlFor="phone">Phone</label>
+            <input
+              className="contact-input"
+              id="phone"
+              type="tel"
+              placeholder="(555) 000-0000"
+            />
+          </div>
+
+          {/* Subject chips */}
+          <div className="field-group">
+            <label className="contact-label">Subject</label>
+            <div className="subject-chips">
+              {subjects.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  className={`chip${activeChip === s ? " active" : ""}`}
+                  onClick={() => setActiveChip(activeChip === s ? null : s)}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Message */}
+          <div className="field-group">
+            <label className="contact-label" htmlFor="message">Message</label>
             <textarea
               className="contact-input message-box"
-              name="message"
               id="message"
-            ></textarea>
-            <button className="btn-submit">Submit</button>
-          </form>
-        </section>
+              name="message"
+              placeholder="Tell us how we can help…"
+            />
+          </div>
+
+          <button className="btn-submit" type="submit">
+            Send Message
+          </button>
+
+        </form>
       </div>
+
     </div>
   );
 };

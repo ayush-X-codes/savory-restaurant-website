@@ -1,33 +1,192 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
 
 :root {
-    --sec-bac-clr: #ffffff;
-    --heading-size: 2.9rem;
-    --fw-bold-700: 700;
-    --heading-clr: #2d3748;
-    --para-size: 1.1rem;
-    --para-clr: #4a5568;
+  --sec-bg: #faf7f4;
+  --heading-clr: #1e1410;
+  --accent: #c8440a;
+  --accent-light: rgba(200, 68, 10, 0.08);
+  --para-clr: #5a4e47;
+  --para-clr-light: #8a7d76;
+  --divider: rgba(200, 68, 10, 0.25);
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 20px rgba(30, 20, 10, 0.07);
 }
 
+/* ──────────────────────────────────────────
+   Section
+────────────────────────────────────────── */
 .about-section {
-    background-color: var(--sec-bac-clr);
-    padding: 80px 20px;
-    text-align: center;
+  background-color: var(--sec-bg);
+  padding: 100px 24px;
+  text-align: center;
+  overflow: hidden;
 }
 
+/* ──────────────────────────────────────────
+   Eyebrow label
+────────────────────────────────────────── */
+.about-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ──────────────────────────────────────────
+   Heading
+────────────────────────────────────────── */
 .about-heading {
-    font-size: var(--heading-size);
-    font-weight: var(--fw-bold-700);
-    color: var(--heading-clr);
-    margin-bottom: 40px;
-    font-family: "Poppins", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--heading-clr);
+  margin: 0 auto 20px;
+  line-height: 1.15;
+  max-width: 520px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s 0.1s ease, transform 0.7s 0.1s ease;
 }
 
-.para-about{
-    font-size: var(--para-size);
-    line-height: 1.8;
-    color: var(--para-clr);
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+/* Warm rule under heading */
+.about-divider {
+  width: 44px;
+  height: 1.5px;
+  background: var(--divider);
+  border-radius: 2px;
+  margin: 0 auto 52px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.6s 0.2s ease, transform 0.6s 0.2s ease;
+  transform-origin: center;
+}
+
+/* ──────────────────────────────────────────
+   Stat pills row
+────────────────────────────────────────── */
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s 0.25s ease, transform 0.7s 0.25s ease;
+}
+
+.stat-pill {
+  background: var(--card-bg);
+  border-radius: 50px;
+  padding: 10px 22px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.stat-number {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--para-clr-light);
+}
+
+/* ──────────────────────────────────────────
+   Body paragraphs
+────────────────────────────────────────── */
+.about-body {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s 0.35s ease, transform 0.7s 0.35s ease;
+}
+
+.para-about {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--para-clr);
+  margin: 0;
+  letter-spacing: 0.1px;
+}
+
+.para-about strong {
+  font-weight: 500;
+  color: var(--heading-clr);
+}
+
+/* ──────────────────────────────────────────
+   Signature tag at bottom
+────────────────────────────────────────── */
+.about-signature {
+  margin-top: 44px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--para-clr-light);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.7s 0.45s ease, transform 0.7s 0.45s ease;
+}
+
+/* ──────────────────────────────────────────
+   Scroll-triggered reveal (JS adds class)
+────────────────────────────────────────── */
+.about-section.in-view .about-label,
+.about-section.in-view .about-heading,
+.about-section.in-view .about-body,
+.about-section.in-view .about-signature,
+.about-section.in-view .about-stats {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section.in-view .about-divider {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ──────────────────────────────────────────
+   Responsive
+────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 120px 48px;
+  }
+
+  .about-stats {
+    gap: 20px;
+  }
+
+  .stat-pill {
+    padding: 12px 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section {
+    padding: 140px 64px;
+  }
 }

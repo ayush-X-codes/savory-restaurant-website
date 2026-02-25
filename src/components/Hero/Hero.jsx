@@ -5,14 +5,27 @@ import "./Hero.css"
 const Hero = () => {
     return (
         <section className='hero-section'>
-            <div className='restaurant-image'>
-            </div>
-            <div>
+            <div className='restaurant-image' />
+
+            <div className='hero-content'>
+                <p className='hero-label'>Authentic Italian Cuisine</p>
+
                 <h1 id='res-name'>SAVORY</h1>
-                <p className='res-intro'>Authentic Italian Cuisine in the Heart of the City</p>
-                 <Link to="/menu">
+
+                <div className='hero-divider' />
+
+                <p className='res-intro'>
+                    In the Heart of the City
+                </p>
+
+                <Link to="/menu">
                     <button className='menu-btn'>View Menu</button>
                 </Link>
+            </div>
+
+            <div className='hero-scroll-hint'>
+                <div className='scroll-line' />
+                <span>Scroll</span>
             </div>
         </section>
     )
